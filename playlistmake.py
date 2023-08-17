@@ -2,14 +2,14 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 # Spotify API認証と接続（キャッシュ無効）
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='685e8b715dec4d119a8bc56bb8a6adad',
-                                               client_secret='200bc27c38944cbd8ae88abf4e6c9478',
-                                               redirect_uri='http://localhost:8888/callback',
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='client_id', # clientidを入力 
+                                               client_secret='client_secret', # client_secretを入力 
+                                               redirect_uri='http://localhost:8888/callback', 
                                                scope='playlist-modify-public',
-                                               cache_path='c:\\Users\\丈\\spotify_cache.txt'))
+                                               cache_path='c:\\Users\\例\\spotify_cache.txt')) # cache_pathを入力 
 
 # 特定の曲のトラックIDを入力する
-seed_track_id = '7CVug9n4FomAqQV4RCunYv'
+seed_track_id = 'seed_track_id'
 
 # トラック情報を取得する
 seed_track_info = sp.track(seed_track_id)
@@ -31,7 +31,6 @@ for result in results['tracks']:
 
 # 新しいプレイリスト名を生成
 new_playlist_name = f'Similar Japanese Tracks Playlist for {seed_track_info["name"]}'
-
 
 # 重複しないプレイリスト名を作成
 counter = 2
