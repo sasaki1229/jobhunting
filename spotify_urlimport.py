@@ -9,7 +9,7 @@ def extract_track_id(url):
         return None
 
 def main():
-    # ユーザーにURLを入力させる
+    # ユーザーがURLを入力する
     spotify_url = input("SpotifyのURLを入力してください: ")
 
     # トラックIDを抜き出す
